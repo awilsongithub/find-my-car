@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app='carFinder'>
+    <head>
+        <meta charset="utf-8">
+        <title>Car Finder</title>
+
+        <!-- STYLES -->
+        <link rel="stylesheet" href="assets/libs/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css" >
+
+        <!-- ANGULAR AND MY JAVASCRIPTS -->
+        <script type="text/javascript" src='assets/libs/angular.min.js'></script>
+        <script type="text/javascript" src='app.js'></script>
+
+
+    </head>
+
+
+    <body ng-controller='CarController as car'>
+
+        <!-- NAVIGATION WITH SEARCH BOXES -->
+        <nav role="navigation">
+          <div class="container">
+
+              <h1>Where's My Car?</h1>
+
+              <!-- SEARCH FIELDS -->
+              <form class="form-inline" >
+                  <h3>Search By: </h3>
+                  <div class="form-group">
+
+                      <input type="text" class='form-control my-nav-inputs' placeholder='License Plate #'>
+                  </div>
+                  <div class="form-group">
+
+                      <input type="text" class='form-control my-nav-inputs'  placeholder='Street Moved From'>
+                  </div>
+                  <div class="form-group">
+
+                      <input type="text" class='form-control my-nav-inputs'  placeholder='Street Moved To'>
+                  </div>
+                  <button type="submit" class='btn' id='my-btn'>Go</button>
+              </form>
+
+                <!-- MENU BELOW SEARCH BARS -->
+                <ul id='nav-menu'>
+                    <li><a href="#">How do I get my car?</a></li>
+                    <li><a href="#">Why are cars moved?</a></li>
+                </ul>
+
+          </div>
+        </nav>
+
+        <!-- MAIN CONTAINER -->
+
+        <div id='table-area' class="container">
+
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Date Moved</th>
+                    <th>Color, Make & Model</th>
+                    <th>License</th>
+                    <th>Moved From</th>
+                    <th>Moved To</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- end container -->
+
+
+    </body>
+</html>

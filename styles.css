@@ -1,0 +1,27 @@
+nav {
+    background-color: blue;
+    color: white;
+}
+#nav-menu {
+    clear: both;
+    list-style-type: none;
+    padding: 25px 0px 10px 0px;
+    /*margin: 0px 0px 10px 121px;*/
+}
+#nav-menu li {
+    display: inline;
+    font-weight: bold;
+    font-size: 95%;
+    padding-right: 12px;
+}
+#nav-menu a, #nav-menu a:hover {
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+#nav-menu li:hover {
+    background-color: #991C0F;
+}
+#table-area {
+    padding-top: 25px;
+}
