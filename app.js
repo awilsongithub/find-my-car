@@ -29,6 +29,13 @@
 
         }]); // end CarController
 
-    //
+    // return a filter function which returns value passed to it without decimals
+    app.filter('removeDecimal', function() {
+        return function(value){
+            return parseInt(value, 10);
+        };
+    });
+
+    
 
 })(); // end IIFE

@@ -28,16 +28,13 @@
               <form class="form-inline" >
                   <h3>Search By: </h3>
                   <div class="form-group">
-
-                      <input type="text" class='form-control my-nav-inputs' placeholder='License Plate #'>
+                      <input type="text" ng-model='license' class='form-control my-nav-inputs' placeholder='License Plate Number'>
                   </div>
                   <div class="form-group">
-
-                      <input type="text" class='form-control my-nav-inputs'  placeholder='Street Moved From'>
+                      <input ng-model='streetName' type="text" class='form-control my-nav-inputs'  placeholder='Street Relocated From or To'>
                   </div>
                   <div class="form-group">
-
-                      <input type="text" class='form-control my-nav-inputs'  placeholder='Street Moved To'>
+                      <input ng-model='dateRelocated' type="text" class='form-control my-nav-inputs'  placeholder='Date Relocated'>
                   </div>
                   <button type="submit" class='btn' id='my-btn'>Go</button>
               </form>
@@ -66,12 +63,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat='car in cars'>
-                    <td>{{car[8]}}</td>
+                <tr ng-repeat='car in cars | filter: streetName | filter: license | filter: dateRelocated' >
+                    <td>{{car[8] | date:"MM/dd/yyyy 'at' h:mma" }}</td>
                     <td>{{car[10]}} {{car[9]}}</td>
                     <td>{{car[11]}}</td>
-                    <td>{{car[13]}} {{car[14]}} {{car[15]}} {{car[16]}}</td>
-                    <td>{{car[17]}} {{car[18]}} {{car[19]}}</td>
+                    <td>{{car[13] | removeDecimal }} {{car[14]}}. {{car[15]}} {{car[16]}}.</td>
+                    <td>{{car[17]}} {{car[18]}}. {{car[19]}}</td>
 
                 </tr>
 
