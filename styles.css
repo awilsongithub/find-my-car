@@ -1,11 +1,17 @@
 nav {
-    background-color: blue;
+    background:
+	linear-gradient(rgba(4, 18, 30, 0.5), rgba(17, 51, 79, 0.7)), url("parking-lot.jpg") no-repeat;
+	background-size: cover;
+    color: #f3A847;
+    padding-bottom: 30px;
+}
+#nav-subheading {
     color: white;
 }
 #nav-menu {
     clear: both;
     list-style-type: none;
-    padding: 25px 0px 10px 0px;
+    padding: 25px 0px 10px 15px;
     /*margin: 0px 0px 10px 121px;*/
 }
 #nav-menu li {
@@ -22,6 +28,49 @@ nav {
 #nav-menu li:hover {
     background-color: #991C0F;
 }
+#nav-city-seal {
+    float: left;
+    margin-right: 15px;
+}
+nav form {
+    clear: left;
+}
+nav .form-group {
+    width: 100% !important;
+}
+nav .my-nav-inputs {
+    border: 1px solid orange;
+    /*min-width: 300px;*/
+    margin-top: 5px;
+    /*min-width: 400px;*/
+    font-size: 14px;
+    width: 100%;
+    min-width: 375px !important;
+}
 #table-area {
     padding-top: 25px;
+}
+.search-by-label {
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: 9px;
+    font-weight: bold;
+}
+.modal-body {
+    color: grey;
+}
+.btn {
+    margin: 20px 0px 23px 15px;
+    background-color: #f3A847;
+    color: #232f39;
+    clear: both;
+}
+.btn:hover {
+    background-color: #FFB800;
+}
+
+@media only screen and (max-width: 1200px){
+    nav .my-nav-inputs {
+        min-width: 310px !important;
+    }
 }
