@@ -55,41 +55,26 @@
 
         <div id='table-area' class="container">
 
-
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Date Moved</th>
-                    <th>Color, Make & Model</th>
+                    <th>Date & Time Relocated</th>
+                    <th>Color & Make</th>
                     <th>License</th>
-                    <th>Moved From</th>
-                    <th>Moved To</th>
+                    <th>Relocated From</th>
+                    <th>Relocated To</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr ng-repeat='car in cars'>
+                    <td>{{car[8]}}</td>
+                    <td>{{car[10]}} {{car[9]}}</td>
+                    <td>{{car[11]}}</td>
+                    <td>{{car[13]}} {{car[14]}} {{car[15]}} {{car[16]}}</td>
+                    <td>{{car[17]}} {{car[18]}} {{car[19]}}</td>
 
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
 
-                </tr>
             </tbody>
         </table>
     </div> <!-- end container -->
