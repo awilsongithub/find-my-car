@@ -1,9 +1,15 @@
 nav {
     background:
-	linear-gradient(rgba(4, 18, 30, 0.5), rgba(17, 51, 79, 0.7)), url("parking-lot.jpg") no-repeat;
+	linear-gradient(to left top, rgba(35, 47, 62, 1), rgba(87, 151, 229, 0.9)), url("parking-lot.jpg") no-repeat;
 	background-size: cover;
     color: #f3A847;
     padding-bottom: 30px;
+}
+body {
+    background-color: rgb(178, 209, 230);
+}
+table {
+    background-color: #E4E8EB;
 }
 #nav-subheading {
     color: white;
