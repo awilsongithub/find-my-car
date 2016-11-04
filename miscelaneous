@@ -1,0 +1,33 @@
+var from = '2016-02-01';
+var to = '2016-04-01';
+var items = [
+	[ 37853, "D28085E7-36C0-4FC5-8BFC-80B4346EAF3E", 37853, 1459435588, "878752", 1459435588, "878752", null, "2016-03-31T09:30:00", "Chevrolet", "Black", "E995028", "Illinois", "3823.0", "N", "BERNARD", "ST", "3915", "N", "KIMBALL", [ null, null ], "Peoples Gas", "16-02157087" ]
+	, [ 37852, "6BF4BF3A-D344-4126-A59A-57F0CE883070", 37852, 1459435588, "878752", 1459435588, "878752", null, "2016-03-31T09:28:00", "Toyota", "Black", "E827976", "Illinois", "2413.0", "S", "SPAULDING", "AVE", "2406", "S", "SPAULDING", [ null, null ], "Peoples Gas", "16-02157046" ]
+	, [ 37851, "193F52AD-AC00-436D-81E6-0A1275567D31", 37851, 1459433788, "878752", 1459433788, "878752", null, "2016-08-31T09:10:00", "Saturn", "Blue", "PERMIT #001261421", "Illinois", "8346.0", "S", "DREXEL", "AVE", "842", "E", "84TH STREET", [ null, null ], "Other", "16-02156093" ]
+];
+// console.log(items[0][8]);
+
+// function parseDate(input) {
+//   var parts = input.split('-');
+//   return new Date(parts[2], parts[1]-1, parts[0]);
+// }
+
+// take an array of strings, and a from and to values
+// iterate, compare and push if pass
+
+function dateFilter (items, from, to) {
+        // no need if in right format already?
+        // var df = parseDate(from);
+        // var dt = parseDate(to);
+        var result = [];
+        for (var i=0; i<items.length; i++){
+            // var f = items[i][8]
+            // var t = items[i][8]
+            if (items[i][8] > from && items[i][8] < to)  {
+                result.push(items[i]);
+            }
+        }
+        return result;
+
+}
+dateFilter(items, from, to);

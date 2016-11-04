@@ -14,10 +14,7 @@
         <script src="assets/libs/bootstrap.min.js"></script>
         <script type="text/javascript" src='app.js'></script>
 
-
-
     </head>
-
 
     <body ng-controller='CarController as car'>
 
@@ -25,27 +22,27 @@
         <nav role="navigation">
           <div class="container">
 
+              <!-- LOGO, MAIN HEADING, SUBHEADING -->
               <div class="row">
                   <div class="col-lg-12">
                       <img id='nav-city-seal' src="cityseal.gif" alt="Chicag City Seal" />
                       <h1>Find Your Vehicle</h1>
                       <p id='nav-subheading'>Search Relocated and Police Towed Vehicles</p>
                   </div>
-
               </div>
 
+              <!-- SEARCH INPUTS  -->
               <div class="row">
                   <form class="form-inline" >
                       <div class="col-lg-4 col-md-4">
                           <div class="form-group">
                               <p class='search-by-label'>Search By License or Street: </p>
-                              <input autofocus id='query' type="text" ng-model='query' class='form-control my-nav-inputs' placeholder='License plate # OR Street relocated from '>
+                              <input autofocus id='query' type="text" ng-model='query' class='form-control my-nav-inputs' placeholder='License plate # OR Street moved to or from '>
                           </div>
                       </div>
                       <div class="col-lg-8 col-md-8">
                           <div class="form-group">
                               <p class='search-by-label'>Search By Date Relocated: </p>
-
                               <input  type="text" name='dateSearch' ng-model='dateSearch' class='form-control my-nav-inputs' placeholder='Required Format: 2016-03-31' >
                           </div>
                       </div>
@@ -53,45 +50,34 @@
                     <!--  MODAL LINK -->
                     <button type='button' class='btn' data-toggle='modal' data-target='#githubModal'>How Do I Get My Vehicle?</button>
               </div>
-
           </div>
         </nav>
 
-
-
+        <!-- TABLE OF DATA -->
         <div id='table-area' class="container">
-
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Date & Time Relocated</th>
-                    <th>Color & Make</th>
-                    <th>License</th>
-                    <th>Relocated From</th>
-                    <th>Relocated To</th>
-                    <th>Reason</th>
-
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat='car in cars | filter: query | filter: dateSearch' >
-                    <!-- <td>{{car[8] | date:"MM/dd/yyyy 'at' h:mma" }}</td> -->
-
-                    <td>{{car[8] }}</td>
-
-                    <!-- <td>2016-03-31</td> -->
-                    <td>{{car[10]}} {{car[9]}}</td>
-                    <td>{{car[11]}}</td>
-                    <td>{{car[13] | removeDecimal }} {{car[14]}}. {{car[15]}} {{car[16]}}.</td>
-                    <td>{{car[17]}} {{car[18]}}. {{car[19]}}</td>
-                    <td>{{car[21]}}</td>
-
-                </tr>
-
-            </tbody>
-        </table>
-    </div> <!-- end container -->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Date & Time Relocated</th>
+                        <th>Color & Make</th>
+                        <th>License</th>
+                        <th>Relocated From</th>
+                        <th>Relocated To</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat='car in cars | filter: query | filter: dateSearch' >
+                        <td>{{car[8] }}</td>
+                        <td>{{car[10]}} {{car[9]}}</td>
+                        <td>{{car[11]}}</td>
+                        <td>{{car[13] | removeDecimal }} {{car[14]}}. {{car[15]}} {{car[16]}}.</td>
+                        <td>{{car[17]}} {{car[18]}}. {{car[19]}}</td>
+                        <td>{{car[21]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> <!-- end container -->
 
     <!-- MODAL -->
     <div class="modal fade" id="githubModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -102,12 +88,11 @@
             <h4 class="modal-title" id="myModalLabel">Get Your Vehicle</h4>
           </div>
           <div class="modal-body">
-                  <p>Vehicles may be relocated, but not impounded, due to inoperability, accident, severe weather, special events, construction or other work being performed in a thoroughfare where the vehicle was previously located. Note: This dataset presents current and former locations of vehicles that have been relocated by the City of Chicago within the last 90 days.</p>
+              <p>Vehicles may be relocated, but not impounded, due to inoperability, accident, severe weather, special events, construction or other work being performed in a thoroughfare where the vehicle was previously located. Note: This dataset presents current and former locations of vehicles that have been relocated by the City of Chicago within the last 90 days.</p>
           </div>
         </div>
       </div>
-  </div> <!-- END MODAL -->
-
+    </div> <!-- END MODAL -->
 
     </body>
 </html>
