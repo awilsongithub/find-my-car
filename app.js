@@ -25,4 +25,34 @@
         };
     });
 
+
+    // filter returns function that accepts params of
+    // 1. all data (array of arrays), 2. start date, 3. end date
+    // returns array of arrays whose date value passes conditionals
+    app.filter('dateRangeFilter', function(){
+        return function(values, inputDate){
+            // see if date field on each item is >= from and <= to
+            // then push onto array if passes and return array at end
+            console.log('hello from dateRangeFilter');
+            console.log(values);
+            console.log(inputDate);
+            // var dateSubString = values[0][8].substr(0, 10);
+            // console.log(dateSubString);
+            // console.log(items);
+            // console.log(dateInput);
+            // return values;
+            var filteredData = [];
+            for (var i=0; i<values.length; i++){
+                var dateSubString = values[i][8].substr(0, 10);
+                if (dateSubString >= inputDate){
+                    filteredData.push(values[i]);
+                }
+            }
+            return filteredData;
+
+
+        };
+    });
+
+
 })();

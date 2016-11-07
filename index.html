@@ -67,7 +67,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat='car in cars | filter: query | filter: dateSearch' >
+                    <tr ng-repeat='car in cars | filter: query | dateRangeFilter:dateSearch' >
                         <td>{{car[8] }}</td>
                         <td>{{car[10]}} {{car[9]}}</td>
                         <td>{{car[11]}}</td>
