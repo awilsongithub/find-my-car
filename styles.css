@@ -50,6 +50,13 @@ nav .my-nav-inputs {
     width: 100%;
     min-width: 375px !important;
 }
+nav .date-input {
+    border: 1px solid orange;
+    margin-top: 5px;
+    font-size: 14px;
+    width: 40%;
+    min-width: 160px !important;
+}
 #table-area {
     padding-top: 25px;
 }
