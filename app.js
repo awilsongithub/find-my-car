@@ -40,7 +40,7 @@
             console.log('hello from dateRangeFilter');
             console.log(values);
             console.log(dateFrom);
-            console.log( typeof dateFrom);
+            console.log( typeof dateFrom );
 
             console.log(dateTo);
             var sampleDateString = values[0][8].substr(0, 10);
@@ -63,7 +63,7 @@
         };
     });
 
-    
+
 
 
 })();
