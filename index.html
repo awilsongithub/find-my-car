@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat='car in cars | filter: query | filter: dateSearch' >
-                        <td>{{car[8] }}</td>
+                        <td>{{car[8] | date:'yyyy-MM-dd h:mma'}}</td>
                         <td>{{car[10]}} {{car[9]}}</td>
                         <td>{{car[11]}}</td>
                         <td>{{car[13] | removeDecimal }} {{car[14]}}. {{car[15]}} {{car[16]}}.</td>

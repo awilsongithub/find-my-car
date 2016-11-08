@@ -31,3 +31,49 @@ function dateFilter (items, from, to) {
 
 }
 dateFilter(items, from, to);
+
+
+/*
+THIS IS THE DATE FILTER THAT WORKS BUT IS VERY BUGGY
+OFTEN TABLE WON'T LOAD WHEN PAGE LOADS BECAUSE?
+VALUES ARE UNDEFINED IN FILTER AND/OR DATEFROM/TO NOT A DATA OBJ (
+SO HAS NONE OF ITS METHODS
+ONCE I MANUALLY ENTER DATES INTO DATE INPUTS THEN IT GIVES ME PROPERLY FILTERED RESULTS.
+*/
+)
+// filter returns function that accepts params of
+// 1. all data (array of arrays), 2. start date, 3. end date
+// returns array of arrays whose date value passes conditionals
+app.filter('dateRangeFilter', function(){
+	return function(values, dateFrom, dateTo){
+
+		// wait 200ms for controller to get data then execute filter code
+		// window.setTimeout(filterValues(values, dateFrom, dateTo), 200);
+
+		// see if date field on each item is >= from and <= to
+		// then push onto array if passes and return array at end
+		console.log('hello from dateRangeFilter');
+		console.log(values);
+		console.log(dateFrom);
+		console.log( typeof dateFrom );
+
+		console.log(dateTo);
+		var sampleDateString = values[0][8].substr(0, 10);
+		console.log(sampleDateString);
+		// console.log(items);
+		// console.log(dateInput);
+		// return values;
+		var filteredData = [];
+		var fromString = dateFrom.toISOString().split('T')[0];
+		var toString = dateTo.toISOString().split('T')[0];
+		console.log(fromString);
+		for (var i=0; i<values.length; i++){
+			var dateSubString = values[i][8].substr(0, 10);
+			if (dateSubString >= fromString && dateSubString <= toString){
+				filteredData.push(values[i]);
+			}
+		}
+		return filteredData;
+
+	};
+});
