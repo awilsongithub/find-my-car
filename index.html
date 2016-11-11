@@ -42,21 +42,17 @@
                           </div>
                       </div>
                       <div class="col-lg-8 col-md-8">
-                          <!-- <div class="form-group">
-                              <p class='search-by-label'>Search By Date Relocated: </p>
-                              <input  type="text" name='dateSearch' ng-model='dateSearch' class='form-control my-nav-inputs' placeholder='Required Format: 2016-03-31' >
-                          </div> -->
-
                           <div class="form-group">
                               <p class='search-by-label'>Search By Date Range: </p>
-                              <label for="">From:</label><br>
-                              <input  type="date" id='dateFromInput' ng-model='dateFrom' class='form-control data-input'  >
-
-                              <label for="">To:</label><br>
-                              <input  type="date" id='dateToInput' ng-model='dateTo' class='form-control date-input' >
+                              <div id='from-date-div' class='pull-left'>
+                                  <label>From:</label><br>
+                                  <input type="date" id='dateFromInput' ng-model='dateFrom' class='form-control date-input'  >
+                              </div>
+                              <div class="pull-left">
+                                  <label>To:</label><br>
+                                  <input  type="date" id='dateToInput' ng-model='dateTo' class='form-control date-input' >
+                              </div>
                           </div>
-
-
                       </div>
 
                     <!--  MODAL LINK -->

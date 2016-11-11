@@ -25,39 +25,14 @@
         };
     });
 
-
-    // filter returns function that accepts params of
-    // 1. all data (array of arrays), 2. start date, 3. end date
-    // returns array of arrays whose date value passes conditionals
+    // uses user input dates to filter
     app.filter('dateRangeFilter', function(){
         return function(values, dateFrom, dateTo){
-            if (!values){
-                return;
-            }
-            // wait 200ms for controller to get data then execute filter code
-            // window.setTimeout(filterValues(values, dateFrom, dateTo), 200);
-
-            // see if date field on each item is >= from and <= to
-            // then push onto array if passes and return array at end
-            console.log('hello from dateRangeFilter'); // YES
-            console.log(values);  // YES
-            console.log(dateFrom); // NO ON LOAD
-            console.log( typeof dateFrom ); // UNDEFINED ON LOAD
-            console.log(dateTo); // UNDEF ON LOAD
-
-            if (values){
-                var sampleDateString = values[0][8].substr(0, 10); // YES, FORMAT GOOD
-                console.log(sampleDateString); // YES ON LOAD
-            }
-
-            // console.log(items);
-            // console.log(dateInput);
-            // return values;
-
-
             var fromString;
             var toString;
+            var filteredData = [];
 
+            // get strings from date object since car data dates are strings
             if (dateFrom){
                 fromString = dateFrom.toISOString().split('T')[0];
                 console.log(fromString);
@@ -66,11 +41,7 @@
                 toString = dateTo.toISOString().split('T')[0];
                 console.log(toString);
             }
-
-            // ONLY RUN FILTER IF WE HAVE WHAT WE NEED!!!!
-            // without failing and breaking ng-repeat output
-            // ELSE JUST RETURN ALL THE DATA
-            var filteredData = [];
+            // only run filter if we have all 3 dates else return all data
             if (values && fromString && toString){
                 for (var i=0; i<values.length; i++){
                     var dateSubString = values[i][8].substr(0, 10);
@@ -82,7 +53,6 @@
             } else {
                 return values;
             }
-            
         };
     });
 

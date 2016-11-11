@@ -55,7 +55,15 @@ nav .date-input {
     margin-top: 5px;
     font-size: 14px;
     width: 40%;
-    min-width: 160px !important;
+    width: 160px;
+    color: grey;
+}
+#query {
+    margin-top: 30px;
+    min-width: 332px;
+}
+#from-date-div {
+    padding-right: 10px;
 }
 #table-area {
     padding-top: 25px;
