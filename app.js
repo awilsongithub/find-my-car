@@ -25,4 +25,38 @@
         };
     });
 
+    // uses user input dates to filter
+    app.filter('dateRangeFilter', function(){
+        return function(values, dateFrom, dateTo){
+            var fromString;
+            var toString;
+            var filteredData = [];
+
+            // get strings from date object since car data dates are strings
+            if (dateFrom){
+                fromString = dateFrom.toISOString().split('T')[0];
+                console.log(fromString);
+            }
+            if (dateTo){
+                toString = dateTo.toISOString().split('T')[0];
+                console.log(toString);
+            }
+            // only run filter if we have all 3 dates else return all data
+            if (values && fromString && toString){
+                for (var i=0; i<values.length; i++){
+                    var dateSubString = values[i][8].substr(0, 10);
+                    if (dateSubString >= fromString && dateSubString <= toString){
+                        filteredData.push(values[i]);
+                    }
+                }
+                return filteredData;
+            } else {
+                return values;
+            }
+        };
+    });
+
+
+
+
 })();

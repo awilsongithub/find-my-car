@@ -50,6 +50,21 @@ nav .my-nav-inputs {
     width: 100%;
     min-width: 375px !important;
 }
+nav .date-input {
+    border: 1px solid orange;
+    margin-top: 5px;
+    font-size: 14px;
+    width: 40%;
+    width: 160px;
+    color: grey;
+}
+#query {
+    margin-top: 30px;
+    min-width: 332px;
+}
+#from-date-div {
+    padding-right: 10px;
+}
 #table-area {
     padding-top: 25px;
 }
