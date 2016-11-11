@@ -31,35 +31,58 @@
     // returns array of arrays whose date value passes conditionals
     app.filter('dateRangeFilter', function(){
         return function(values, dateFrom, dateTo){
-
+            if (!values){
+                return;
+            }
             // wait 200ms for controller to get data then execute filter code
             // window.setTimeout(filterValues(values, dateFrom, dateTo), 200);
 
             // see if date field on each item is >= from and <= to
             // then push onto array if passes and return array at end
-            console.log('hello from dateRangeFilter');
-            console.log(values);
-            console.log(dateFrom);
-            console.log( typeof dateFrom );
+            console.log('hello from dateRangeFilter'); // YES
+            console.log(values);  // YES
+            console.log(dateFrom); // NO ON LOAD
+            console.log( typeof dateFrom ); // UNDEFINED ON LOAD
+            console.log(dateTo); // UNDEF ON LOAD
 
-            console.log(dateTo);
-            var sampleDateString = values[0][8].substr(0, 10);
-            console.log(sampleDateString);
+            if (values){
+                var sampleDateString = values[0][8].substr(0, 10); // YES, FORMAT GOOD
+                console.log(sampleDateString); // YES ON LOAD
+            }
+
             // console.log(items);
             // console.log(dateInput);
             // return values;
-            var filteredData = [];
-            var fromString = dateFrom.toISOString().split('T')[0];
-            var toString = dateTo.toISOString().split('T')[0];
-            console.log(fromString);
-            for (var i=0; i<values.length; i++){
-                var dateSubString = values[i][8].substr(0, 10);
-                if (dateSubString >= fromString && dateSubString <= toString){
-                    filteredData.push(values[i]);
-                }
-            }
-            return filteredData;
 
+
+            var fromString;
+            var toString;
+
+            if (dateFrom){
+                fromString = dateFrom.toISOString().split('T')[0];
+                console.log(fromString);
+            }
+            if (dateTo){
+                toString = dateTo.toISOString().split('T')[0];
+                console.log(toString);
+            }
+
+            // ONLY RUN FILTER IF WE HAVE WHAT WE NEED!!!!
+            // without failing and breaking ng-repeat output
+            // ELSE JUST RETURN ALL THE DATA
+            var filteredData = [];
+            if (values && fromString && toString){
+                for (var i=0; i<values.length; i++){
+                    var dateSubString = values[i][8].substr(0, 10);
+                    if (dateSubString >= fromString && dateSubString <= toString){
+                        filteredData.push(values[i]);
+                    }
+                }
+                return filteredData;
+            } else {
+                return values;
+            }
+            
         };
     });
 
