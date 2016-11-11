@@ -44,6 +44,7 @@ ONCE I MANUALLY ENTER DATES INTO DATE INPUTS THEN IT GIVES ME PROPERLY FILTERED 
 // filter returns function that accepts params of
 // 1. all data (array of arrays), 2. start date, 3. end date
 // returns array of arrays whose date value passes conditionals
+
 app.filter('dateRangeFilter', function(){
 	return function(values, dateFrom, dateTo){
 
@@ -52,12 +53,15 @@ app.filter('dateRangeFilter', function(){
 
 		// see if date field on each item is >= from and <= to
 		// then push onto array if passes and return array at end
+
+		// CHECK THAT WE HAVE DATA WE NEED
 		console.log('hello from dateRangeFilter');
 		console.log(values);
 		console.log(dateFrom);
 		console.log( typeof dateFrom );
-
 		console.log(dateTo);
+
+
 		var sampleDateString = values[0][8].substr(0, 10);
 		console.log(sampleDateString);
 		// console.log(items);
